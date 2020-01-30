@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="yesHiEntities-Web.config Connection String" description="yesHiEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.Model1.csdl|res://*/Models.Model1.ssdl|res://*/Models.Model1.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=swinny78.database.windows.net;initial catalog=yesHi;persist security info=True;user id=gulp78;password=X12885#Bb;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\102909073\\Desktop\\Pratice_Final_Database_Challenge-master\\API2\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='yesHiEntities']/@connectionString" />
+  </parameter>
+</parameters>

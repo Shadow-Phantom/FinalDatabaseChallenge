@@ -1,0 +1,23 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[Record]
+       [dbo].[Sale]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Table rebuild
+       [dbo].[Record] (Table)
+       [dbo].[Sale] (Table)
+
+** Supporting actions
+     Drop
+       [dbo].[FK_Record_Sale] (Foreign Key)
+       [dbo].[FK_Client_Sale] (Foreign Key)
+     Create
+       [dbo].[FK_Record_Sale] (Foreign Key)
+       [dbo].[FK_Client_Sale] (Foreign Key)

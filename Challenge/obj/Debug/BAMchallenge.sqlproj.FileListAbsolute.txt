@@ -1,0 +1,10 @@
+C:\Users\102909073\Desktop\Pratice_Final_Database_Challenge-master\practice_challenge\bin\Debug\BAMchallenge.dacpac
+C:\Users\102909073\Desktop\Pratice_Final_Database_Challenge-master\practice_challenge\bin\Debug\practice_challenge.dll
+C:\Users\102909073\Desktop\Pratice_Final_Database_Challenge-master\practice_challenge\bin\Debug\practice_challenge.pdb
+C:\Users\102909073\Desktop\Pratice_Final_Database_Challenge-master\practice_challenge\obj\Debug\practice_challenge.dll
+C:\Users\102909073\Desktop\Pratice_Final_Database_Challenge-master\practice_challenge\obj\Debug\practice_challenge.pdb
+C:\Users\102909073\Desktop\Pratice_Final_Database_Challenge-master\practice_challenge\obj\Debug\BAMchallenge.sqlprojAssemblyReference.cache
+C:\Users\102909073\Desktop\Pratice_Final_Database_Challenge-master\practice_challenge\obj\Debug\Model.xml
+C:\Users\102909073\Desktop\Pratice_Final_Database_Challenge-master\practice_challenge\obj\Debug\refactor.xml
+C:\Users\102909073\Desktop\Pratice_Final_Database_Challenge-master\practice_challenge\obj\Debug\postdeploy.sql
+C:\Users\102909073\Desktop\Pratice_Final_Database_Challenge-master\practice_challenge\obj\Debug\predeploy.sql

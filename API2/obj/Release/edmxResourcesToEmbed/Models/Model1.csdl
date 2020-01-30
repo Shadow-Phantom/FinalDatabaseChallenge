@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="yesHiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="ClientNum" />
+    </Key>
+    <Property Name="ClientNum" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PCode" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PassionCode" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Sales" Relationship="Self.FK_Client_Sale" FromRole="Client" ToRole="Sale" />
+    <NavigationProperty Name="Special_Passion" Relationship="Self.FK_Pass_Cust" FromRole="Client" ToRole="Special_Passion" />
+  </EntityType>
+  <EntityType Name="Record">
+    <Key>
+      <PropertyRef Name="CdID" />
+    </Key>
+    <Property Name="CdID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CdName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Artist" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Sales" Relationship="Self.FK_Record_Sale" FromRole="Record" ToRole="Sale" />
+  </EntityType>
+  <EntityType Name="Sale">
+    <Key>
+      <PropertyRef Name="ClientNum" />
+      <PropertyRef Name="CdID" />
+      <PropertyRef Name="SaleDate" />
+    </Key>
+    <Property Name="ClientNum" Type="Int32" Nullable="false" />
+    <Property Name="CdID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SaleDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="PricePaid" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_Client_Sale" FromRole="Sale" ToRole="Client" />
+    <NavigationProperty Name="Record" Relationship="Self.FK_Record_Sale" FromRole="Sale" ToRole="Record" />
+  </EntityType>
+  <EntityType Name="Special_Passion">
+    <Key>
+      <PropertyRef Name="PassionCode" />
+    </Key>
+    <Property Name="PassionCode" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PassionDesc" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Clients" Relationship="Self.FK_Pass_Cust" FromRole="Special_Passion" ToRole="Client" />
+  </EntityType>
+  <EntityType Name="database_firewall_rules">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="start_ip_address" />
+      <PropertyRef Name="end_ip_address" />
+      <PropertyRef Name="create_date" />
+      <PropertyRef Name="modify_date" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="start_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="end_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modify_date" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <Association Name="FK_Client_Sale">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="Sale" Type="Self.Sale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ClientNum" />
+      </Principal>
+      <Dependent Role="Sale">
+        <PropertyRef Name="ClientNum" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pass_Cust">
+    <End Role="Special_Passion" Type="Self.Special_Passion" Multiplicity="1" />
+    <End Role="Client" Type="Self.Client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Special_Passion">
+        <PropertyRef Name="PassionCode" />
+      </Principal>
+      <Dependent Role="Client">
+        <PropertyRef Name="PassionCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Record_Sale">
+    <End Role="Record" Type="Self.Record" Multiplicity="1" />
+    <End Role="Sale" Type="Self.Sale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Record">
+        <PropertyRef Name="CdID" />
+      </Principal>
+      <Dependent Role="Sale">
+        <PropertyRef Name="CdID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="yesHiEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Clients" EntityType="Self.Client" />
+    <EntitySet Name="Records" EntityType="Self.Record" />
+    <EntitySet Name="Sales" EntityType="Self.Sale" />
+    <EntitySet Name="Special_Passion" EntityType="Self.Special_Passion" />
+    <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" />
+    <AssociationSet Name="FK_Client_Sale" Association="Self.FK_Client_Sale">
+      <End Role="Client" EntitySet="Clients" />
+      <End Role="Sale" EntitySet="Sales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pass_Cust" Association="Self.FK_Pass_Cust">
+      <End Role="Special_Passion" EntitySet="Special_Passion" />
+      <End Role="Client" EntitySet="Clients" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Record_Sale" Association="Self.FK_Record_Sale">
+      <End Role="Record" EntitySet="Records" />
+      <End Role="Sale" EntitySet="Sales" />
+    </AssociationSet>
+    <FunctionImport Name="ADD_CUSTOMER">
+      <Parameter Name="num" Mode="In" Type="Int32" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="address" Mode="In" Type="String" />
+      <Parameter Name="postCode" Mode="In" Type="String" />
+      <Parameter Name="interest" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>

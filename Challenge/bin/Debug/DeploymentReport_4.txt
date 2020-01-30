@@ -1,0 +1,22 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[Client] (Table)
+       [dbo].[Record] (Table)
+       [dbo].[Sale] (Table)
+       [dbo].[Special_Passion] (Table)
+       [dbo].[FK_Pass_Cust] (Foreign Key)
+       [dbo].[FK_Client_Sale] (Foreign Key)
+       [dbo].[FK_Record_Sale] (Foreign Key)
+       [dbo].[ADD_CUSTOMER] (Procedure)
+
+** Supporting actions

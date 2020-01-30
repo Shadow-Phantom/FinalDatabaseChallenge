@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29025.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BAMchallenge", "BAMchallenge.sqlproj", "{7BB2DF10-6617-45B0-ADA1-B0E1DC34991F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API2", "..\API2\API2.csproj", "{2A56DC4F-5D4C-48CB-A4D6-A21A114E5FFD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BB2DF10-6617-45B0-ADA1-B0E1DC34991F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BB2DF10-6617-45B0-ADA1-B0E1DC34991F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BB2DF10-6617-45B0-ADA1-B0E1DC34991F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{7BB2DF10-6617-45B0-ADA1-B0E1DC34991F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BB2DF10-6617-45B0-ADA1-B0E1DC34991F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BB2DF10-6617-45B0-ADA1-B0E1DC34991F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{2A56DC4F-5D4C-48CB-A4D6-A21A114E5FFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A56DC4F-5D4C-48CB-A4D6-A21A114E5FFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A56DC4F-5D4C-48CB-A4D6-A21A114E5FFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A56DC4F-5D4C-48CB-A4D6-A21A114E5FFD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F8CCBD9D-280E-455A-B39D-ACE5FDBAFCFB}
+	EndGlobalSection
+EndGlobal

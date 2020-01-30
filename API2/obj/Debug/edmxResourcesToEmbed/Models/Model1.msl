@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="yesHiModelStoreContainer" CdmEntityContainer="yesHiEntities">
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="yesHiModel.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="ClientNum" ColumnName="ClientNum" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="PCode" ColumnName="PCode" />
+          <ScalarProperty Name="PassionCode" ColumnName="PassionCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Records">
+      <EntityTypeMapping TypeName="yesHiModel.Record">
+        <MappingFragment StoreEntitySet="Record">
+          <ScalarProperty Name="CdID" ColumnName="CdID" />
+          <ScalarProperty Name="CdName" ColumnName="CdName" />
+          <ScalarProperty Name="Artist" ColumnName="Artist" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sales">
+      <EntityTypeMapping TypeName="yesHiModel.Sale">
+        <MappingFragment StoreEntitySet="Sale">
+          <ScalarProperty Name="ClientNum" ColumnName="ClientNum" />
+          <ScalarProperty Name="CdID" ColumnName="CdID" />
+          <ScalarProperty Name="SaleDate" ColumnName="SaleDate" />
+          <ScalarProperty Name="PricePaid" ColumnName="PricePaid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Special_Passion">
+      <EntityTypeMapping TypeName="yesHiModel.Special_Passion">
+        <MappingFragment StoreEntitySet="Special_Passion">
+          <ScalarProperty Name="PassionCode" ColumnName="PassionCode" />
+          <ScalarProperty Name="PassionDesc" ColumnName="PassionDesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="database_firewall_rules">
+      <EntityTypeMapping TypeName="yesHiModel.database_firewall_rules">
+        <MappingFragment StoreEntitySet="database_firewall_rules">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="start_ip_address" ColumnName="start_ip_address" />
+          <ScalarProperty Name="end_ip_address" ColumnName="end_ip_address" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="modify_date" ColumnName="modify_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="ADD_CUSTOMER" FunctionName="yesHiModel.Store.ADD_CUSTOMER" />
+  </EntityContainerMapping>
+</Mapping>
